@@ -59,6 +59,17 @@ function Auth() {
         }
     };
 
+    const logout = async () => {
+        if (!sdkRef.current) {
+            console.error("Web3Modal not initialized")
+            return
+        }
+        await sdkRef.current.logout()
+        sdkRef.current.hideWallet()
+        setSmartAccount(null)
+        enableInterval(false)
+    }
+
     return (
         <div>
 
