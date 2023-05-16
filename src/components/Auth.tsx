@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect, useRef } from "react";
 import SocialLogin from "@biconomy/web3-auth/dist/src/SocialLogin";
 import { ChainId } from "@biconomy/core-types";
@@ -71,8 +73,24 @@ function Auth() {
     }
 
     return (
-        <div>
-
+        <div className="">
+            <h1 className="">Web3 Auth</h1>
+            <h2 className="">With Biconomy</h2>
+            {
+                !smartAccount && !loading && <button onClick={login}>Login</button>
+            }
+            {
+                loading && <p>Loading Account details...</p>
+            }
+            {
+                !!smartAccount && (
+                    <div>
+                        <h3>Account address:</h3>
+                        <p>{smartAccount.address}</p>
+                        <button onClick={logout}>Logout</button>
+                    </div>
+                )
+            }
         </div>
     )
 }
