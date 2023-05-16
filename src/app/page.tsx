@@ -13,7 +13,7 @@ const Home = () => {
   )
 
   return (
-    <main className="">
+    <main className="bg-white">
       <Suspense fallback={<div>LOADING...</div>}>
         <SocialLoginDynamic />
       </Suspense>

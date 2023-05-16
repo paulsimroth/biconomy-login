@@ -73,11 +73,14 @@ function Auth() {
     }
 
     return (
-        <div className="">
-            <h1 className="">Web3 Auth</h1>
-            <h2 className="">With Biconomy</h2>
+        <div className="w-full flex flex-col items-center justify-between p-6">
+            <div className="w-full flex items-center justify-around p-6 mb-6">
+                <h1 className="text-[35px] font-bold">Web3 Auth</h1>
+                <h2 className="text-[25px] font-bold">with Biconomy</h2>
+            </div>
+
             {
-                !smartAccount && !loading && <button onClick={login}>Login</button>
+                !smartAccount && !loading && <button className="p-4 border-3 bg-[#A52A2A] rounded-md font-bold text-[20px]" onClick={login}>Login</button>
             }
             {
                 loading && <p>Loading Account details...</p>
@@ -85,7 +88,7 @@ function Auth() {
             {
                 !!smartAccount && (
                     <div>
-                        <h3>Account address:</h3>
+                        <h3 className="text-[25px] font-bold">Account address:</h3>
                         <p>{smartAccount.address}</p>
                         <button onClick={logout}>Logout</button>
                     </div>
