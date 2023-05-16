@@ -1,8 +1,5 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
 import "@biconomy/web3-auth/dist/src/style.css";
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Web3 Login',
